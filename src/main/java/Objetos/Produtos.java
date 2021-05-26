@@ -77,7 +77,7 @@ public class Produtos {
      * @return the valorTotalProduto
      */
     public double getValorTotalProduto() {
-        return valorTotalProduto;
+        return valorTotalProduto = qtdeProduto*valorUnidade;
     }
 
     /**
