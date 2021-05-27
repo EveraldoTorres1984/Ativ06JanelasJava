@@ -6,25 +6,38 @@
 package Janelas;
 
 import Objetos.Fornecedores;
-import javax.swing.JOptionPane;
+import Objetos.Produtos;
 
 /**
  *
  * @author torre
  */
 public class DadosFormulario extends javax.swing.JFrame {
-    Fornecedores forn = new Fornecedores();   
-    DadosFormulario formu;
+
     /**
      * Creates new form Formulario
      */
     public DadosFormulario() {
         initComponents();
     }
-     public DadosFormulario(DadosFormulario formu) {
+
+    public DadosFormulario(Fornecedores forn, Produtos prod) {
         initComponents();
-        this.formu = formu;
-     }
+        jLRazaoSocial.setText(forn.getRazaoSocial());
+        jLCnpj.setText(forn.getCnpj());
+        jLNomeRep.setText(forn.getNomeRepresentante());
+        jLEndereco.setText(forn.getEndereco());
+        jLTelefone.setText(forn.getTelefone());
+        
+        jLNomeProd.setText(prod.getNomeProduto());
+        jLDescProd.setText(prod.getDescricaoProduto());
+        jLValorUn.setText(Double.toString(prod.getValorUnidade()));
+        jLQtdeProd.setText(Integer.toString(prod.getQtdeProduto()));
+        jLValorTotal.setText(Double.toString(prod.getValorTotalProduto()));
+        jLFornProd.setText(prod.getFornecedorProduto());
+        
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,59 +48,23 @@ public class DadosFormulario extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jBDadosF = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLRazaoSocial = new javax.swing.JLabel();
+        jLCnpj = new javax.swing.JLabel();
+        jLNomeRep = new javax.swing.JLabel();
+        jLEndereco = new javax.swing.JLabel();
+        jLTelefone = new javax.swing.JLabel();
+        jLNomeProd = new javax.swing.JLabel();
+        jLDescProd = new javax.swing.JLabel();
+        jLValorUn = new javax.swing.JLabel();
+        jLQtdeProd = new javax.swing.JLabel();
+        jLValorTotal = new javax.swing.JLabel();
+        jLFornProd = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Produtos Cadastrados", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Verdana", 1, 18))); // NOI18N
-
-        jBDadosF.setText("Dados Fornecedores");
-        jBDadosF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBDadosFActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jBDadosF, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jBDadosF)
-                .addContainerGap(41, Short.MAX_VALUE))
-        );
-
-        jButton2.setText("Dados Produtos");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jButton2)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jButton2)
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
 
         jLabel1.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -97,20 +74,76 @@ public class DadosFormulario extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Produtos");
 
+        jLRazaoSocial.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLRazaoSocial.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLRazaoSocial.setText("jLabel3");
+
+        jLCnpj.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLCnpj.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLCnpj.setText("jLabel7");
+
+        jLNomeRep.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLNomeRep.setText("jLabel4");
+
+        jLEndereco.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLEndereco.setText("jLabel5");
+
+        jLTelefone.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLTelefone.setText("jLabel6");
+
+        jLNomeProd.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLNomeProd.setText("jLabel3");
+
+        jLDescProd.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLDescProd.setText("jLabel4");
+
+        jLValorUn.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLValorUn.setText("jLabel5");
+
+        jLQtdeProd.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLQtdeProd.setText("jLabel6");
+
+        jLValorTotal.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLValorTotal.setText("jLabel7");
+
+        jLFornProd.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLFornProd.setText("jLabel8");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(38, 38, 38)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLNomeRep)
+                                    .addComponent(jLCnpj)
+                                    .addComponent(jLEndereco)
+                                    .addComponent(jLTelefone))))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(56, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLDescProd)
+                            .addComponent(jLNomeProd)
+                            .addComponent(jLValorUn)
+                            .addComponent(jLQtdeProd)
+                            .addComponent(jLValorTotal)
+                            .addComponent(jLFornProd))
+                        .addGap(119, 119, 119))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,11 +152,29 @@ public class DadosFormulario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLRazaoSocial)
+                    .addComponent(jLNomeProd))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLCnpj)
+                    .addComponent(jLDescProd))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLNomeRep)
+                    .addComponent(jLValorUn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLEndereco)
+                    .addComponent(jLQtdeProd))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLTelefone)
+                    .addComponent(jLValorTotal))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLFornProd)
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -145,15 +196,6 @@ public class DadosFormulario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jBDadosFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBDadosFActionPerformed
-         
-       jBDadosF.setText(forn.getRazaoSocial() + "\n" + forn.getCnpj() + 
-                "\n" + forn.getNomeRepresentante() + "\n" + forn.getEndereco() + 
-                        "\n" + forn.getTelefone());
-       
-        JOptionPane.showMessageDialog(this, formu);
-    }//GEN-LAST:event_jBDadosFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,18 +228,25 @@ public class DadosFormulario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DadosFormulario().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBDadosF;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLCnpj;
+    private javax.swing.JLabel jLDescProd;
+    private javax.swing.JLabel jLEndereco;
+    private javax.swing.JLabel jLFornProd;
+    private javax.swing.JLabel jLNomeProd;
+    private javax.swing.JLabel jLNomeRep;
+    private javax.swing.JLabel jLQtdeProd;
+    private javax.swing.JLabel jLRazaoSocial;
+    private javax.swing.JLabel jLTelefone;
+    private javax.swing.JLabel jLValorTotal;
+    private javax.swing.JLabel jLValorUn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

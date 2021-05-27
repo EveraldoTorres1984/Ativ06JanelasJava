@@ -16,7 +16,7 @@ public class Principal extends javax.swing.JFrame {
         
     Fornecedores forn = new Fornecedores();
     Produtos prod = new Produtos();
-    DadosFormulario formu = new DadosFormulario();
+    DadosFormulario formu;
     
     public Principal() {
         initComponents();
@@ -191,7 +191,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jBFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBFormularioActionPerformed
-        DadosFormulario f = new DadosFormulario(formu);
+        DadosFormulario f = new DadosFormulario(forn,prod);
         f.setVisible(true);
     }//GEN-LAST:event_jBFormularioActionPerformed
 
